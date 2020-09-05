@@ -1,0 +1,1 @@
+https://unpkg.com/haml-coffee@1.4.1/dist/compiler/HamlCoffeeTemplateoffee.js
