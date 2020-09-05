@@ -2,7 +2,7 @@
 
 Add [haml-coffee](https://github.com/netzpirat/haml-coffee) template support to your Rails asset pipeline.
 
-This project is very similar to [Haml Coffee Assets](https://github.com/emilioforrer/haml_coffee_assets) but does not monkey-patch Rails core classes.
+This project is very similar to [Haml Coffee Assets](https://github.com/emilioforrer/haml_coffee_assets) but it does not monkey-patch Rails core classes.
 
 ## Installation
 
