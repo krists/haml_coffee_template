@@ -14,7 +14,8 @@ module HamlCoffeeTemplate
         source,
         name,
         HamlCoffeeTemplate.configuration.namespace,
-        HamlCoffeeTemplate.configuration.compiler_options
+        HamlCoffeeTemplate.configuration.haml_coffee_compiler_options,
+        HamlCoffeeTemplate.configuration.coffee_script_compiler_options,
       )
     end
 
@@ -22,20 +23,21 @@ module HamlCoffeeTemplate
       runtime.call(
         "HamlCoffeeTemplate.compile",
         source,
-        HamlCoffeeTemplate.configuration.compiler_options
+        HamlCoffeeTemplate.configuration.haml_coffee_compiler_options,
+        HamlCoffeeTemplate.configuration.coffee_script_compiler_options
       )
     end
 
     def runtime_source
-      [coffeescript_source, hamlcoffee_source, wrapper_source].join(";")
+      [coffeescript_source, haml_coffee_source, wrapper_source].join(";")
     end
 
     def coffeescript_source
       File.read(CoffeeScript::Source.path)
     end
 
-    def hamlcoffee_source
-      File.read(HamlCoffeeTemplate.configuration.hamlcoffee_path)
+    def haml_coffee_source
+      File.read(HamlCoffeeTemplate.configuration.haml_coffee_path)
     end
 
     def wrapper_source
