@@ -9,12 +9,13 @@ module HamlCoffeeTemplate
     end
 
     def template(name, source)
+      haml_coffee_compiler_options = HamlCoffeeTemplate.configuration.haml_coffee_compiler_options.dup
+      haml_coffee_compiler_options[:name] = name
+      haml_coffee_compiler_options[:namespace] = HamlCoffeeTemplate.configuration.namespace
       runtime.call(
         "HamlCoffeeTemplate.template",
         source,
-        name,
-        HamlCoffeeTemplate.configuration.namespace,
-        HamlCoffeeTemplate.configuration.haml_coffee_compiler_options,
+        haml_coffee_compiler_options,
         HamlCoffeeTemplate.configuration.coffee_script_compiler_options,
       )
     end
