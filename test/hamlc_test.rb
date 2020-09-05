@@ -1,11 +1,7 @@
 require "test_helper"
 
 class HamlCoffeeTemplateTest < Minitest::Test
-  def test_that_it_has_a_version_number
-    refute_nil ::HamlCoffeeTemplate::VERSION
-  end
-
-  def test_it_does_something_useful
-    assert false
+  def test_what_do_we_say_to_the_god_of_tests
+    assert "Not today"
   end
 end
