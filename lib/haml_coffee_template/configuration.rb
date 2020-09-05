@@ -5,7 +5,7 @@ module HamlCoffeeTemplate
     def initialize
       self.namespace = "window.JST"
       self.compiler_options = {}
-      self.hamlcoffee_path = File.expand_path("../hamlcoffee.js", __FILE__)
+      self.hamlcoffee_path = File.expand_path("hamlcoffee.js", __dir__)
     end
   end
 end

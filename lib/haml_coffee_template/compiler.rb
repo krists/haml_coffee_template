@@ -10,7 +10,7 @@ module HamlCoffeeTemplate
 
     def template(name, source)
       runtime.call(
-        'HamlCoffeeTemplate.template',
+        "HamlCoffeeTemplate.template",
         source,
         name,
         HamlCoffeeTemplate.configuration.namespace,
@@ -20,7 +20,7 @@ module HamlCoffeeTemplate
 
     def compile(source)
       runtime.call(
-        'HamlCoffeeTemplate.compile',
+        "HamlCoffeeTemplate.compile",
         source,
         HamlCoffeeTemplate.configuration.compiler_options
       )
@@ -43,7 +43,7 @@ module HamlCoffeeTemplate
     end
 
     def wrapper_script_path
-      File.expand_path("../wrapper.js", __FILE__)
+      File.expand_path("wrapper.js", __dir__)
     end
   end
 end

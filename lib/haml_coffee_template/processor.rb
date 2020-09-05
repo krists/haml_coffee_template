@@ -5,17 +5,15 @@ module HamlCoffeeTemplate
       @source = block.call
     end
 
-    def render(context, empty_hash_wtf)
+    def render(context, _empty_hash_wtf)
       self.class.run(@filename, @source, context)
     end
 
     def self.run(filename, source, context)
-      begin
-        compiler.template(context.logical_path, source)
-      rescue => e
-        STDOUT.puts("(#{self.name}) Failed to compile: #{filename}")
-        raise e
-      end
+      compiler.template(context.logical_path, source)
+    rescue StandardError => e
+      STDOUT.puts("(#{name}) Failed to compile: #{filename}")
+      raise e
     end
 
     def self.call(input)
